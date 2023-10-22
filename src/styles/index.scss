@@ -1,0 +1,285 @@
+:root {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: 'Poppins', sans-serif;
+}
+
+img{
+  width:100%;
+ 
+}
+
+$blackColor :crimson
+;
+@mixin FlexStyles{
+  display: flex;
+  align-items: center
+;
+}
+@mixin Overlay{
+    height: 100%;
+    width: 100%;
+    background-color: pink;
+    position: absolute;
+    top: 0;
+    right:0;  
+}
+@mixin navLink{
+  font-size: 1.1rem;
+  transition: color 200ms ease-in-out;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover{
+    color: white;
+  }
+
+
+
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  // overflow-y: hidden;
+}
+img{
+  width: 100%;
+}
+
+
+nav{
+  padding: 0 1rem;
+  // opacity set to not show
+  opacity: 0;
+  position: absolute;
+  width:97%;
+  top: 0;
+  z-index: 2;
+  @include FlexStyles();
+  justify-content: space-between;
+  div{
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    ul{
+      display: flex;
+      justify-content: space-between;
+      gap:2rem;
+      li {
+        list-style: none;
+        a{
+          @include navLink();
+        }
+      }
+    }
+  }
+}
+
+// HERO
+
+.hero{
+  background-color: $blackColor;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  @include FlexStyles();
+  justify-content:center;
+  .hero-text{
+    position: absolute;
+    // opacity set to not show
+    opacity:1;
+    left: 10rem;
+    z-index: 1;
+    h2{
+      opacity: 0;
+      font-size: 6rem;
+      margin:0;
+      padding: 0;
+      span{
+        color: white;
+      }
+    }
+    p{
+      font-size: 2.5rem;
+      margin:0;
+      padding: 1rem;
+      opacity: 0;
+     
+    }
+  }
+  .side-message{
+    position: absolute;
+    left: 1rem;
+    top: 70%;
+    // opacity set to not show
+    opacity: 0;
+    @include FlexStyles();
+    gap: 10px;
+    h3{
+      letter-spacing: 5px;
+    }
+    div{
+      background-color: black;
+      width: 140px;
+      height: 3px;
+      
+    }
+  }
+ 
+} 
+
+.hero-img-div{
+  width: 500px;
+  height: 100%;
+  position: absolute;
+ left: 47.9%;
+//  left:60%;
+}
+.hero-img-overlay{
+  height: 100%;
+  width: 100%;
+  background-color: pink;
+  position: absolute;
+  top: 0;
+  right:0;
+ 
+
+}
+// SIDE-PANEL
+.side-panel{
+  display: flex;
+ gap: 2rem;
+  align-items: center;
+  background-color:$blackColor;
+  transform: rotate(90deg);
+  position: absolute;
+  top:40rem;
+  // height: 100px;
+  width: 700px;
+  right: -22%;
+  margin: 0;
+  a{
+    @include navLink();
+  }
+}
+
+// POST-HERO
+.post-hero{
+  @include FlexStyles();
+  position: relative;
+  margin-top: 5rem;
+  gap:4rem;
+  height: 500px;
+  width: 100%;
+  .lines{
+    display: flex;
+    gap: 2rem;
+    min-height:500px;
+    position: absolute;
+    top: 0;
+    left:30%;
+    z-index: -1;
+    div{
+      background-color: rgba(220, 20, 60, 0.686);
+      height: 0;
+      width: 15px;
+    }
+  }
+  .text{
+    width: 550px;
+    padding: 2rem;
+    h2{
+      font-size: 3rem;
+      line-height: 50px;
+      span{
+        color:crimson;
+      }
+    }
+    p{
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 30px;
+    }
+    button{
+      padding: 0.6rem;
+      border:none;
+      margin-top: 2rem;
+      width: 100px;
+      font-weight: 600;
+      font-size:20px;
+      color: white;
+      background-color: $blackColor;
+
+    }
+  }
+  .images-div{
+   
+    height: 600px;
+    overflow: hidden;
+    @include FlexStyles();
+    gap:2rem;
+   .image-in-post{
+    width: 300px;
+    overflow: hidden;
+    img{
+      transform:scale(2)  translateY(600px)
+     
+
+    }
+    
+  }
+}
+}
+
+.image-in-post:nth-child(1){
+  align-self: baseline;
+ 
+}
+
+.image-in-post:nth-child(2){
+  align-self: flex-end;
+}
+// penul-hero
+.penul-hero{
+  margin:7rem 2rem;
+  overflow:hidden;
+  background-color: rgba(220, 20, 60, 0.686);
+  gap: 3rem;
+  @include FlexStyles();
+ 
+  .penul-img-div{
+    position: relative;
+    z-index:5;
+    width: 600px;
+   transform: translateX(-700px);
+    height:399px;
+    overflow: hidden;
+  img{
+  transform: scale(2);
+    }
+  .overlay{
+  @include Overlay();
+  
+
+  }
+  }
+  .penul-text{
+    width: 40%;
+    transform: translateX(-1300px);
+    z-index:1;
+    font-size: 3rem;
+
+  }
+}
+// footer
+footer{
+  width: 93%;
+  margin: 0 auto;
+  height: 80px;
+  font-size:2rem;
+ padding:1rem;
+ span{
+  color:white
+ }
+  background-color: rgba(220, 20, 60, 0.452);
+}
