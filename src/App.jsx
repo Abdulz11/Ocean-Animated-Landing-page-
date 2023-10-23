@@ -3,7 +3,7 @@ import model2 from "./assets/pexels-alexander-krivitskiy-1572878.jpg";
 import model3 from "./assets/pexels-nappy-1771383.jpg";
 import model4 from "./assets/pexels-sebastiaan-stam-1097456.jpg";
 import { useRef, useLayoutEffect } from "react";
-import { gsap, Power3, Power2, Power1, Bounce } from "gsap";
+import { gsap, Power2, Power1 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -242,7 +242,7 @@ function App() {
         </div>
         <div className='penul-text'>
           <p>
-            What is life without self- <span>expression</span>. Indulge in your
+            What is life without self-<span>expression</span>. Indulge in your
             decadence as you <span>unwind</span> in your element.
           </p>
         </div>
